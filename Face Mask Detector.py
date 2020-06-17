@@ -3,7 +3,13 @@ import tensorflow as tf
 
 FONT = cv2.FONT_HERSHEY_SIMPLEX
 face_cascade = cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
-cam = cv2.VideoCapture(0)
+
+pathCamara = 0
+pathCamara = 'rtsp://192.168.226.191:554/profile1'
+pathCamara = 'rtsp://192.168.226.201:554/profile1'
+
+
+cam = cv2.VideoCapture(pathCamara)
 
 model = tf.keras.models.load_model('Detector Model.model')
 
